@@ -98,8 +98,9 @@ Generate a summary statistics table consisting of the mean, median, variance, st
     		check_outliers=(mouseid.loc[(mouseid['Tumor Volume (mm3)']>upper_bound)|(mouseid['Tumor Volume (mm3)']<lower_bound)])
     		outliers=check_outliers["Mouse ID"].unique()
     		
-![Quantile1](Graphs&Tables/Quantile1.png)
-![Quantile2](Graphs&Tables/Quantile2.png)
+![Quantile1](Graphs&Tables/Quantile1.PNG)
+
+![Quantile2](Graphs&Tables/Quantile2.PNG)
 
 * Generate a box and whisker plot of the final tumor volume for all four treatment regimens and highlight any potential outliers in the plot by changing their color and style.
 ![BoxPlots](Graphs&Tables/BoxPlot.png)
