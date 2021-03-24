@@ -116,23 +116,22 @@ Generate a summary statistics table consisting of the mean, median, variance, st
 
 * Calculate the correlation coefficient and linear regression model between mouse weight and average tumor volume for the Capomulin treatment. Plot the linear regression model on top of the previous scatter plot.
 
-	# Calculate the correlation coefficient and linear regression model 
-	# for mouse weight and average tumor volume for the Capomulin regimen
-
-	(slope, intercept, rvalue, pvalue, stderr) = st.linregress(Avg_Mouse_Weight, Avg_Tumor_Vol)
-	regress_values = Avg_Mouse_Weight * slope + intercept
-	line_eq = "y = " + str(round(slope,2)) + "x + " + str(round(intercept,2))
-	correlation=st.pearsonr(Avg_Mouse_Weight, Avg_Tumor_Vol)
-	print(f"The correlation between mouse weight and tumor volume is {round(correlation[0],2)}")
-	print(f"The final r-squared value is {round((rvalue**2),2)}")
-	plt.scatter(Avg_Mouse_Weight, Avg_Tumor_Vol, c=Age)
-	clb=plt.colorbar()
-	plt.title("Mouse Weight vs. Avg Tumor Volume for Capomulin")
-	plt.xlabel("Weight (g)")
-	plt.ylabel("Avg Tumor Volume (mm3)")
-	clb.set_label("Age (months)")
-	plt.plot(Avg_Mouse_Weight, regress_values, '-r')
-	plt.annotate(line_eq,(18,37),fontsize=15,color="red")
+	  # Calculate the correlation coefficient and linear regression model 
+	  # for mouse weight and average tumor volume for the Capomulin regimen
+	  (slope, intercept, rvalue, pvalue, stderr) = st.linregress(Avg_Mouse_Weight, Avg_Tumor_Vol)
+	  regress_values = Avg_Mouse_Weight * slope + intercept
+	  line_eq = "y = " + str(round(slope,2)) + "x + " + str(round(intercept,2))
+	  correlation=st.pearsonr(Avg_Mouse_Weight, Avg_Tumor_Vol)
+	  print(f"The correlation between mouse weight and tumor volume is {round(correlation[0],2)}")
+	  print(f"The final r-squared value is {round((rvalue**2),2)}")
+	  plt.scatter(Avg_Mouse_Weight, Avg_Tumor_Vol, c=Age)
+	  clb=plt.colorbar()
+	  plt.title("Mouse Weight vs. Avg Tumor Volume for Capomulin")
+	  plt.xlabel("Weight (g)")
+	  plt.ylabel("Avg Tumor Volume (mm3)")
+	  clb.set_label("Age (months)")
+	  plt.plot(Avg_Mouse_Weight, regress_values, '-r')
+	  plt.annotate(line_eq,(18,37),fontsize=15,color="red")
 
 ![Correlation_Coefficient](Graphs&Tables/Correlation.PNG)
 ![LinearRegression](Graphs&Tables/LinearReg.PNG)
