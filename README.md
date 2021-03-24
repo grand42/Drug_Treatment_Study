@@ -137,5 +137,6 @@ Generate a summary statistics table consisting of the mean, median, variance, st
 	  plt.annotate(line_eq,(18,37),fontsize=15,color="red")
 
 ![Correlation_Coefficient](Graphs&Tables/Correlation.PNG)
+
 ![LinearRegression](Graphs&Tables/LinearReg.png)
 
