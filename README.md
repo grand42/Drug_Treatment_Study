@@ -59,29 +59,32 @@ Generate a summary statistics table consisting of the mean, median, variance, st
 
 * Generate a bar plot using both Pandas's `DataFrame.plot()` and Matplotlib's `pyplot` that shows  the number of total mice for each treatment regimen throughout the course of the study.
 
-![Bar_Plot](Graphs&Tables/Mice_per_Drug.PNG)
+
+![Bar_Plot](Graphs&Tables/Mice_per_Drug.png)
 
 * Generate a pie plot using both Pandas's `DataFrame.plot()` and Matplotlib's `pyplot` that shows the distribution of female or male mice in the study.
 
-![Pie_Plot](Graphs&Tables/GenderMice.PNG)
+
+
+![Pie_Plot](Graphs&Tables/GenderMice.png)
 
 #### Quartiles, Outliers and Boxplots
 
 * Calculate the final tumor volume of each mouse across four of the most promising treatment regimens: Capomulin, Ramicane, Infubinol, and Ceftamin. 
 * Calculate the quartiles and IQR and quantitatively determine if there are any potential outliers across all four treatment regimens.
 
-	# Put treatments into a list for for loop (and later for plot labels)
-	treatments = ["Capomulin", "Ramicane", "Infubinol", "Ceftamin"]
+	  # Put treatments into a list for for loop (and later for plot labels)
+	  treatments = ["Capomulin", "Ramicane", "Infubinol", "Ceftamin"]
 
 
-	# Create empty list to fill with tumor vol data (for plotting)
-	tumor_vol = []
+	  # Create empty list to fill with tumor vol data (for plotting)
+	  tumor_vol = []
 
-	# Calculate the IQR and quantitatively determine if there are any potential outliers. 
+	  # Calculate the IQR and quantitatively determine if there are any potential outliers. 
 
-	outliers=[]    
-    	# Locate the rows which contain mice on each drug and get the tumor volumes
-	for treatment in treatments:
+	  outliers=[]    
+    	  # Locate the rows which contain mice on each drug and get the tumor volumes
+	  for treatment in treatments:
     		mouseid=mouse_data.loc[(mouse_data["Drug Regimen"]==treatment) & (mouse_data['Timepoint']==mouse_data['Max Time'])]
     		mouseid=mouseid.set_index('Drug Regimen')
     		tumor_vol.append(mouseid['Tumor Volume (mm3)'])
@@ -95,22 +98,22 @@ Generate a summary statistics table consisting of the mean, median, variance, st
     		check_outliers=(mouseid.loc[(mouseid['Tumor Volume (mm3)']>upper_bound)|(mouseid['Tumor Volume (mm3)']<lower_bound)])
     		outliers=check_outliers["Mouse ID"].unique()
     		
-![Quantile1](Graphs&Tables/Quantile 1.PNG)
-![Quantile2](Graphs&Tables/Quantile2.PNG)
+![Quantile1](Graphs&Tables/Quantile1.png)
+![Quantile2](Graphs&Tables/Quantile2.png)
 
 * Generate a box and whisker plot of the final tumor volume for all four treatment regimens and highlight any potential outliers in the plot by changing their color and style.
-![BoxPlots](Graphs&Tables/BoxPlot.PNG)
+![BoxPlots](Graphs&Tables/BoxPlot.png)
 
 #### Line and Scatter Plots
 
 * Plot the tumor volume over time for a mouse treated with Capomulin.
 
-![TumorVolume_over_time](Graphs&Tables/LineChart.PNG)
+![TumorVolume_over_time](Graphs&Tables/LineChart.png)
 
 
 * Generate a scatter plot of mouse weight vs average tumor volume.
 
-![MouseWeight_vs_TumorVolume](Graphs&Tables/ScatterPlot.PNG)
+![MouseWeight_vs_TumorVolume](Graphs&Tables/ScatterPlot.png)
 
 #### Correlation and Regression
 
@@ -134,5 +137,5 @@ Generate a summary statistics table consisting of the mean, median, variance, st
 	  plt.annotate(line_eq,(18,37),fontsize=15,color="red")
 
 ![Correlation_Coefficient](Graphs&Tables/Correlation.PNG)
-![LinearRegression](Graphs&Tables/LinearReg.PNG)
+![LinearRegression](Graphs&Tables/LinearReg.png)
 
