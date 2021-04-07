@@ -1,4 +1,4 @@
-# Matplotlib-Challenge
+# Drug Treatment Study
 
 ## Background
 
